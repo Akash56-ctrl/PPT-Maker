@@ -10,6 +10,8 @@ from tavily import TavilyClient
 import numpy as np
 import streamlit as st
 
+st.set_page_config(layout = "wide")
+
 #=================STEP 2 LOAD ENV and API KEYS==================
 st.title("Agentic  PPT Generator")
 st.header("""User can generate,PPT,Images,and fetch Latest news""")
@@ -109,7 +111,7 @@ if all(all_API)
           search_latest_info,
           # generate_image])
 
-  leader_agent
+  #leader_agent
 else:
     st.info("Give API-Keys first to load Agent")
 
@@ -123,7 +125,7 @@ tab1, tab2, tab3 = st.tabs([
 
 user_input = st.text_area("Write Prompt & click Enter")
 
-if (user_input) & (leader_agent):
+if (user_input):
     with tab1:
       if st.button("Click to Generate Image", key="Image-Button"):
         with st.spinner("Running Agent"):
